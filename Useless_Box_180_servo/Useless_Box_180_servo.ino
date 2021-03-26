@@ -24,7 +24,7 @@ void loop()
 {
   leftSwitchStatus = digitalRead(leftSwitchPin);
   rightSwitchStatus = digitalRead(rightSwitchPin);
-  action = random(1, 13);
+  action = random(1, 16);
   // LINKER SERVO (leftPosEnd = 170, leftPosStart = 0, leftPosOver = 180) -----------------------------------------------
   if (leftSwitchStatus == LOW) {
     if (action == 1)
@@ -669,12 +669,12 @@ void loop()
           delay(50);
         }
       }
-      rightServo.write(leftPosEnd);
-      leftServo.write(rightPosStart);
+      rightServo.write(rightPosEnd);
+      leftServo.write(leftPosStart);
       delay(1000);
-      rightServo.write(leftPosStart);
+      rightServo.write(rightPosStart);
     }
-  
+  }
   leftServo.write(leftPosStart);
   rightServo.write(rightPosStart);
 }
